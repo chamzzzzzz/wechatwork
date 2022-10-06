@@ -70,7 +70,7 @@ func (c *Client) GetDepartmentUsers(departmentId int64) ([]*user.User, error) {
 		return nil, err
 	}
 
-	res, err := http.Get(fmt.Sprintf("%suser/simplelist?access_token=%s&department_id=%d&fetch_child=1", defaultURL, c.Token, departmentId))
+	res, err := http.Get(fmt.Sprintf("%suser/list?access_token=%s&department_id=%d&fetch_child=1", defaultURL, c.Token, departmentId))
 	if err != nil {
 		return nil, err
 	}
